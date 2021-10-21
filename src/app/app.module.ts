@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ListingComponent } from './listing/listing.component';
+import { ToFixedPipe } from './to-fixed.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListingComponent } from './listing/listing.component';
     BeerComponent,
     FooterComponent,
     ToolbarComponent,
-    ListingComponent
+    ListingComponent,
+    ToFixedPipe
   ],
   imports: [
     BrowserModule,

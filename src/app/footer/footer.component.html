@@ -4,7 +4,7 @@
   </div>
   <div>
     Page {{ beersService.page }} from
-    {{ beersService.beers.length / beersService.perPage | number: "1.0-0" }}
+    {{ beersService.beers.length / beersService.perPage  | toFixed:0:'up' }}
   </div>
   <div class="next" (click)="beersService.navigate(1)">
     {{
