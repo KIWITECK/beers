@@ -1,0 +1,28 @@
+<div class="toolbar">
+  <input
+    type="text"
+    (keyup)="beersService.search()"
+    [(ngModel)]="beersService.searchterm"
+    placeholder="Search by tagline..."
+  />
+  <img
+    class="imgBtn"
+    (click)="beersService.sortByABV()"
+    src="assets/sort{{ beersService.abvState }}.svg"
+    alt=""
+    [title]="
+      beersService.abvState === 1
+        ? 'order from high to low ABV'
+        : beersService.abvState === 2
+        ? 'delete sorting'
+        : 'order from low to high ABV'
+    "
+  />
+  <img
+    class="imgBtn"
+    src="assets/view{{ beersService.viewType }}.svg"
+    alt=""
+    title="View as Grid"
+    (click)="beersService.changeViewType()"
+  />
+</div>

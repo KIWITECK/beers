@@ -1,0 +1,16 @@
+<div class="footer">
+  <div class="prev" (click)="beersService.navigate(-1)">
+    {{ beersService.page > 1 ? "Previous" : "" }}
+  </div>
+  <div>
+    Page {{ beersService.page }} from
+    {{ beersService.beers.length / beersService.perPage | number: "1.0-0" }}
+  </div>
+  <div class="next" (click)="beersService.navigate(1)">
+    {{
+      beersService.beers.length / beersService.perPage > beersService.page
+        ? "Next"
+        : ""
+    }}
+  </div>
+</div>

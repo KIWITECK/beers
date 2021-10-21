@@ -1,0 +1,31 @@
+<div class="superContainer view{{ beersService.viewType }}">
+  <div
+    *ngFor="
+      let beer of beersService.beers
+        | slice
+          : (beersService.page - 1) * beersService.perPage
+          : beersService.page * beersService.perPage
+    "
+    class="beersWrapper"
+  >
+    <beer
+      [id]="beer.id"
+      [name]="beer.name"
+      [abv]="beer.abv"
+      [tagline]="beer.tagline"
+      [image]="beer.image_url"
+      [view]="beersService.viewType"
+    >
+    </beer>
+  </div>
+  <div *ngIf="!beersService.beers.length" class="beersWrapper">
+    <beer
+      [id]="0"
+      name="Not found"
+      abv="0"
+      tagline="Sorry! We couldn't find any beers for this search."
+      image="assets/sad.svg"
+    >
+    </beer>
+  </div>
+</div>

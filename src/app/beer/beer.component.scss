@@ -65,7 +65,7 @@
   align-items: center;
   margin-bottom: 10px;
   div.contentRow {
-    width: calc(100% - 150px);
+    width: calc(100% - 160px);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -97,6 +97,7 @@
   }
   div.imgCol {
     width: 50px;
+    padding-right: 10px;
     img.beerImg {
       margin: auto;
       width: 100%;

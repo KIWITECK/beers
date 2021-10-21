@@ -1,0 +1,20 @@
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgb(200 200 200 / 50%);
+    div {
+      padding: 5px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: 1px solid #d6d6d6;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  }
+  
