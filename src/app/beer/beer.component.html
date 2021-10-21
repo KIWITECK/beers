@@ -1,0 +1,34 @@
+<div  *ngIf="view === 0" class="beerContainer">
+    <h2>{{name | slice:0:15}}</h2>
+    <div class="contentRow">
+        <div class="text">
+            <img (click)="toggleFavorite()" 
+                class="favoriteImg" 
+                src="assets/{{isFavorite}}.svg" alt="">
+            <p>{{tagline}}</p>
+            <div class="abv">
+                ABV: {{abv}}
+            </div>
+        </div>
+        <div class="imgCol">
+            <img [src]="image" [alt]="name" class="beerImg">
+        </div>
+    </div>
+</div>
+<div  *ngIf="view === 1" class="beerrow">
+    <div class="imgCol">
+        <img [src]="image" [alt]="name" class="beerImg">
+    </div>
+    <h2 class="beerName">{{name | slice:0:15}}</h2>
+    <div class="contentRow">
+        <div class="text">
+            <img (click)="toggleFavorite()" 
+                class="favoriteImg" 
+                src="assets/{{isFavorite}}.svg" alt="">
+            <p>{{tagline}}</p>
+            <div class="abv">
+                ABV: {{abv}}
+            </div>
+        </div>
+    </div>
+</div>
