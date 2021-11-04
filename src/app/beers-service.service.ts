@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { filter } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
@@ -27,8 +27,10 @@ export class BeersService {
           page: this.pagesFetched,
         },
       })
+      .pipe(
+        filter((beers: any) => beers.length > 0),
+      )
       .subscribe((beers: any) => {
-        if (beers.length) {
           this.beersAll = this.beersAll.concat(beers);
           this.beers = this.beersAll;
           this.search();
@@ -39,7 +41,7 @@ export class BeersService {
             this.pagesFetched++;
             this.fetchBeers();
           }
-        }
+        
       });
   }
   search(keep=false) {
